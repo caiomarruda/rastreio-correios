@@ -73,7 +73,7 @@ async function fetchTrackingInfo(trackingCode, description, isUpdate = false, sk
             }
         });
         if (!response.ok) {
-            throw new Error('Código de rastreamento inválido ou serviço indisponível');
+            throw new Error(`Código de rastreamento inválido ou serviço indisponível - ${response.status} - ${response.error}`);
         }
         const text = await response.text();
         const parser = new DOMParser();
