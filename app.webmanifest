@@ -1,0 +1,6 @@
+{
+    "name" : "Rastreamento de objetos Correios",
+    "short_name" : "Rastreio Correios",
+    "display" : "standalone",
+    "start_url" : "/?utm_pwa=on"
+}
