@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreamento de Encomendas</title>
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        input[type="text"] {
+            padding: 0.5em;
+            font-size: 1em;
+            margin-bottom: 1em;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 1em;
+            width: 100%;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        #codes-list {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        #codes-list li {
+            padding: 0.5em;
+            background-color: #fff;
+            margin-bottom: 0.5em;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            input[type="text"], button {
+                font-size: 0.875em;
+            }
+
+            button {
+                padding: 0.5em;
+            }
+
+            #result, #codes-list li {
+                font-size: 0.875em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Rastreamento de Encomendas</h1>
+    <form id="tracking-form">
+        <label for="tracking-code">Código de Rastreamento:</label>
+        <input type="text" id="tracking-code" required>
+        <label for="description">Descrição:</label>
+        <input type="text" id="description" required>
+        <button type="submit">Consultar</button>
+        <button type="button" id="update-all">Atualizar</button>
+    </form>
+    <div id="result"></div>
+    <ul id="codes-list"></ul>
+    <script src="app.js"></script>
+</body>
+</html>
