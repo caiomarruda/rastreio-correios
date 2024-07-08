@@ -63,13 +63,14 @@ async function checkAndFetchTrackingInfo(trackingCode, description, skipConfirma
 }
 
 async function fetchTrackingInfo(trackingCode, description, isUpdate = false, skipConfirmation = false) {
-    const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+    const corsProxy = 'https://proxy.cors.sh/';
     const endpoint = `${corsProxy}https://www.linkcorreios.com.br/?id=${trackingCode}`;
     try {
         const response = await fetch(endpoint, {
             headers: {
                 'origin': window.location.origin,
-                'x-requested-with': 'XMLHttpRequest'
+                'x-requested-with': 'XMLHttpRequest',
+                'x-cors-api-key': 'temp_0145959c9ae9f5e6005ce047e9772e8d'
             }
         });
         if (!response.ok) {
